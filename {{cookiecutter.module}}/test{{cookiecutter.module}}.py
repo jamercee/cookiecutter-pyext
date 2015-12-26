@@ -32,6 +32,7 @@ LOG = logging.getLogger('test{{cookiecutter.module}}')
 
 import {{cookiecutter.module}}
 
+
 class Test{{cookiecutter.module}}(unittest.TestCase):
     r"""{{cookiecutter.module}} unittest test case"""
 

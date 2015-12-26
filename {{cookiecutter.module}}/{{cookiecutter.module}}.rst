@@ -1,4 +1,4 @@
-.. automodule:: {{cookiecutter.project}}.{{cookiecutter.module}}
+.. automodule:: {{cookiecutter.module}}
    :members:
    :noindex:
 
