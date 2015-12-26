@@ -122,7 +122,7 @@ PyDoc_STRVAR(helloworld__doc__,
         "Greet the world -- hail fellow well met\n"
         );
 
-statric PyObject*
+static PyObject*
 helloworld() {
     return PyString_FromString("hello world");
     }
