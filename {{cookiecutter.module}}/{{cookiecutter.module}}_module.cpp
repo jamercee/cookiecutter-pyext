@@ -1,3 +1,18 @@
+/*
+This module needs to be manually added to you setup.py. Consider
+adding the following lines:
+
+    from setuptools import Extension
+
+    module = Extension('{{cookiecutter.project}}.{{cookiecutter.module}}',
+                sources = ['src/{{cookiecutter.module}}_module.cpp'],
+                )
+
+    setup(...
+        ext_modules = [ module ],
+        )
+*/
+
 #include <Python.h>
 
 PyDoc_STRVAR({{cookiecutter.module}}__doc__,
