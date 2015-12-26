@@ -1,7 +1,7 @@
 {
     "module": "extension",
     "module_short_description": "short module description",
-    "project": ""
+    "project": "",
     "new_type": "",
     "version": "1.0",
     "release": "1.0.1",
