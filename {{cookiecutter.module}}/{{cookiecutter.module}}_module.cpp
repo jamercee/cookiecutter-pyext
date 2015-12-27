@@ -1,5 +1,5 @@
 /*
-This module needs to be manually added to you setup.py. Consider
+This module needs to be manually added to your setup.py. Consider
 adding the following lines:
 
     from setuptools import Extension
@@ -153,6 +153,12 @@ init{{cookiecutter.module}}(void) {
     if (PyModule_AddStringConstant(me, "__version__", __version__))
         goto ErrorReturn;
 
+{% if cookiecutter.new_type %}
+    Py_INCREF(&{{cookiecutter.new_type}}Object);
+    if (PyModule_AddObject(me, "{{cookiecutter.new_type}}", (PyObject *)&{{cookiecutter.new_type}}Object))
+        goto ErrorReturn;
+
+{% endif %}
     return;
     
 ErrorReturn:
