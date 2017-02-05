@@ -48,7 +48,7 @@ class Test{{cookiecutter.module}}(unittest.TestCase):
 {% if cookiecutter.project %}
     def test_version(self):
         r"""confirm version exists"""
-        self.assertTrue({{cookiecutter.module}}, '__version__')
+        self.assertTrue(hasattr({{cookiecutter.module}}, '__version__'))
 {% endif %}
 
 if __name__ == '__main__':
