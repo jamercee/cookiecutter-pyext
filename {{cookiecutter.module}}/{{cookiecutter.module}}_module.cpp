@@ -73,7 +73,7 @@ static PyMethodDef {{cookiecutter.new_type}}Object_methods[] = {
 
 
 static PyTypeObject {{cookiecutter.new_type}}ObjectType = {
-    PyObject_HEAD_INIT(NULL)
+    PyVarObject_HEAD_INIT(NULL, 0)
     0,                          /*ob_size*/
     "{{cookiecutter.module}}.{{cookiecutter.new_type}}", /*tp_name*/
     sizeof({{cookiecutter.new_type}}Object),       /*tp_basicsize*/
@@ -129,22 +129,24 @@ helloworld() {
 
 
 static PyMethodDef module_methods[] = {
-
     {"helloworld", (PyCFunction)helloworld, METH_NOARGS, helloworld__doc__},
-
-    {NULL}
+    {NULL, NULL}
     };
 
+static PyModuleDef {{cookiecutter.module}}_module = {
+	PyModuleDef_HEAD_INIT,
+	"{{cookiecutter.module}}",		/* module name */
+	{{cookiecutter.module}}__doc__,
+	-1,
+	module_methods
+	};
 
-#ifndef PyMODINIT_FUNC  /* declarations for DLL import/export */
-#define PyMODINIT_FUNC void
-#endif
 PyMODINIT_FUNC
-init{{cookiecutter.module}}(void) {
+PyInit_{{cookiecutter.module}}(void) {
 
     PyObject* me;
 
-    if (!(me = Py_InitModule3("{{cookiecutter.module}}", module_methods, {{cookiecutter.module}}__doc__))) {
+	if (!(me = PyModule_Create(&{{cookiecutter.module}}_module_)))
         return;
         }
 
