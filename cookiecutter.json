@@ -5,7 +5,7 @@
     "new_type": "",
     "version": "1.0",
     "release": "1.0.1",
-    "python": "python2.7",
+    "python": "python3",
     "author": "Jim Carroll",
     "email": "jim@carroll.net",
     "year" : "2019",
